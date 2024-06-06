@@ -29,7 +29,7 @@ export default function Todo() {
   }
 
   // Delete all todo list items
-  const deleteAllTodoItems = (index:number) => {
+  const deleteAllTodoItems = () => {
     setTodoList([]);
     cache.remove("todo");
   }

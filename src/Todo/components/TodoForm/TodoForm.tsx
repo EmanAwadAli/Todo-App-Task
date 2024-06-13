@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 export type TodoFormProps = {
+  className: "mongez" | "recoil",
   submit: (todo: string) => void
 };
-export default function TodoForm({submit}: TodoFormProps) {
+export default function TodoForm({ className, submit}: TodoFormProps) {
 
   const [value, setValue] = useState<string>("");
 
@@ -24,7 +25,7 @@ export default function TodoForm({submit}: TodoFormProps) {
         value={value} 
         onChange={(e) => setValue(e.target.value)}
       />
-      <button type="submit" className="min-w-fit h-full px-5 text-white font-medium bg-violet-900 rounded-lg hover:bg-violet-500 transition-all duration-500 ease-in-out">Add Task</button>
+      <button type="submit" className={`min-w-fit h-full px-5 text-white font-medium ${ className === "mongez" && "bg-[#b28923]" }  ${ className === "recoil" && "bg-[#3578e5]" }  rounded-lg hover:bg-[#000] transition-all duration-500 ease-in-out`}>Add Task</button>
     </form>
   );
 }

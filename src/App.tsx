@@ -1,8 +1,11 @@
+import { RecoilRoot } from 'recoil'
 import Todo from './Todo'
 
 function App() {
   return (
-   <Todo/>
+    <RecoilRoot>
+      <Todo/>
+    </RecoilRoot>
   )
 }
 
